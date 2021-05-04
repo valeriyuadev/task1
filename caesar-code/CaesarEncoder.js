@@ -1,4 +1,6 @@
-class CaesarEncoder 
+const { Logger } = require( './Logger' );
+
+class CaesarEncoder extends Logger
 {
     /** 
      * @protected {Array} charsLatin 
@@ -13,17 +15,17 @@ class CaesarEncoder
      */
 
     /**
-     * @protected {number} shift 
-     */
-
-    /**
      * 
      * @param {number} shift 
      */
     constructor( shift ) {
+        super();
+
         this.shift = parseInt( shift ) || 1;
         this.AZ    = [ 65, 90 ];   // A...Z
         this.az    = [ 97, 122 ];  // a...z
+
+        this.logShow = true;
 
         this.charsLatin = [
             ...this.range( ...this.AZ ),   
@@ -106,7 +108,12 @@ class CaesarEncoder
             textEncoded.push( char );
         }
 
-        return textEncoded.join( '' );
+        let textAfter = textEncoded.join( '' );
+
+        this.toLog( `text before - ${text}`);
+        this.toLog( `text after - ${textAfter}`);
+
+        return textAfter;
     }
 
     /**
@@ -129,4 +136,3 @@ class CaesarEncoder
 }
 
 module.exports = { CaesarEncoder };
-//export { CaesarEncoder };
