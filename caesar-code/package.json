@@ -1,7 +1,7 @@
 {
-  "name": "task1",
+  "name": "caesar-code",
   "version": "1.0.0",
-  "description": "node caesar-code",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,12 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/valeriyuadev/task1.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/valeriyuadev/task1/issues"
   },
   "homepage": "https://github.com/valeriyuadev/task1#readme",
-  "dependencies": {}
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "yargs": "^17.0.1"
+  }
 }
